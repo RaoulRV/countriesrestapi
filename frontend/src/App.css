@@ -1,0 +1,108 @@
+/* Global Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif; 
+}
+
+body {
+  background-color: #333; 
+  color: white; 
+}
+
+.App {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.country-card {
+  margin: 10px;
+  padding: 15px;
+  background-color: #424242; 
+  border-radius: 8px;
+  width: 300px; 
+}
+
+.country-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.country-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.error {
+  color: #ff6b6b; 
+}
+
+button {
+  background-color: #355079; 
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3; 
+}
+
+/* Search Bar Styles */
+.search-bar {
+  max-width: 500px; 
+  width: 100%; 
+  margin: 20px auto; 
+}
+
+.search-input {
+  width: 100%; 
+  padding: 10px 15px;
+  font-size: 18px; 
+  border: 2px solid #ddd; 
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #0d6efd; 
+}
+
+.search-btn {
+  padding: 10px 15px;
+  font-size: 18px; 
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background-color: #355079;
+  color: white;
+}
+
+.search-btn:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 600px) {
+  .search-bar {
+    max-width: 100%;
+  }
+
+  .search-input,
+  .search-btn {
+    font-size: 16px; 
+  }
+}
