@@ -10,12 +10,11 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
 
   useEffect(() => {
     const fetchAllCountries = async () => {
       try {
-        const response = await axios.get(`${apiUrl}/api/countries/all`);
+        const response = await axios.get('https://fair-gray-codfish-cape.cyclic.app/api/countries/all');
         setAllCountries(response.data);
       } catch (error) {
         console.error('Failed to fetch all countries:', error);
@@ -31,7 +30,7 @@ function App() {
     setError(''); // Resetting error state on new search
     setShowAllCountries(false);
     try {
-      const response = await axios.get(`${apiUrl}/api/countries/${countryName}`);
+      const response = await axios.get(`https://fair-gray-codfish-cape.cyclic.app/api/countries/${countryName}`);
       if (response.data && response.data.length > 0) {
         setCountryInfo(response.data[0]);
       } else {
