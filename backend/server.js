@@ -7,6 +7,12 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
+app.use(express.static(path.join(__dirname, 'frontend/dist')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/frontend/dist/index.html'));
+});
+
 app.get('/api/countries/all', async (req, res) => {
     try {
         const response = await axios.get(`https://restcountries.com/v3.1/all/`);
@@ -33,6 +39,7 @@ app.get('/api/countries/:name', async (req, res) => {
       res.status(500).send({ message: "No response received from REST Countries API" });
     } else {
       // Something happened in setting up the request that triggered an Error
+      
       res.status(500).send({ message: error.message });
     }
   }
