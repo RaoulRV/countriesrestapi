@@ -15,7 +15,7 @@ function App() {
   useEffect(() => {
     const fetchAllCountries = async () => {
       try {
-        const response = await axios.get('${apiUrl}/api/countries/all');
+        const response = await axios.get(`${apiUrl}/api/countries/all`);
         setAllCountries(response.data);
       } catch (error) {
         console.error('Failed to fetch all countries:', error);
